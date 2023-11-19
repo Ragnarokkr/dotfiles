@@ -1,96 +1,56 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = """\
-╭─ [░▒▓](#a3aed2)\
-[ᚱᛞ $os](bg:#a3aed2 fg:#090c0c)\
-[](bg:#769ff0 fg:#a3aed2)\
-[$username\
+format = """
+[](white)\
+$os\
+$username\
 $hostname\
-$localip\
+$sudo\
+$container\
+$docker_context\
+$shell\
 $shlvl\
-$singularity\
-$azure\
-$kubernetes\
-$docker_context\
 $directory\
-$vcsh\
-$docker_context\
-](fg:#769ff0 bg:#394260)\
-[$git_branch\
+$git_branch\
 $git_commit\
-$git_state\
-$git_metrics\
 $git_status\
-$hg_branch\
-](fg:#394260 bg:#212736)\
-[$package\
-$c\
-$cmake\
-$dart\
-$deno\
-$dotnet\
-$golang\
-$java\
-$kotlin\
-$gradle\
-$lua\
-$nodejs\
-$perl\
-$php\
-$python\
-$rust\
-$swift\
-$zig\
-$nix_shell\
-$conda\
-$meson\
-$env_var\
-](fg:#212736 bg:#1d2230)\
-$fill\
-[$jobs\
-$cmd_duration\
 $status\
+$character
+"""
+
+right_format="""
+$jobs\
+$all\
+$cmd_duration\
 $time\
-](fg:#769ff0 bg:#1d2230)\
-$line_break\
-╰$character"""
-continuation_prompt = "▷▷"
+[](fg:#1d2230)
+"""
 
 [character]
-success_symbol = "▶"
-error_symbol = "▶"
+success_symbol = "[](green)"
+error_symbol = "[](red)"
 
 [fill]
 symbol = " "
 
-[custom.gitmail]
-command = "git config user.name"
-when = "[ -d .git ] && echo .git || git rev-parse --git-dir > /dev/null 2>&1"
-format = " | [$output](underline fg:blue) | "
-
-[aws]
-disabled = true
+#[custom.gitmail]
+#command = "git config user.name"
+#when = "[ -d .git ] && echo .git || git rev-parse --git-dir > /dev/null 2>&1"
+#format = " | [$output](underline fg:blue) | "
 
 [bun]
+symbol = ""
 style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-[buf]
-disabled = true
+format = '[[ $symbol($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [c]
 symbol = " "
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
-[cobol]
-disabled = true
-
-[crystal]
-disabled = true
-
-[daml]
-disabled = true
+[cmd_duration]
+style = "fg:yellow bg:#1d2230"
+format = "[ 󰔛 $duration]($style)"
 
 [dart]
 symbol = " "
@@ -98,45 +58,35 @@ style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [directory]
-style = "fg:#e3e5e5 bg:#769ff0"
+style = "fg:#333333 bg:#769ff0"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 read_only = " "
 
 [directory.substitutions]
-"Documents" = "󰈙 "
+"Documents" = " "
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
 
 [deno]
+symbol = "🦖"
 style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+format = '[ [[$symbol](fg:#15dd00 bg:#212736) ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [docker_context]
 symbol = " "
 
-[elixir]
-disabled = true
-
-[elm]
-disabled= true
-
-[erlang]
-disabled = true
-
-[fennel]
-disabled = true
-
-[gcloud]
-disabled = true
-
 [git_branch]
-ignore_branches = ['master', 'main']
 symbol = ""
 style = "bg:#394260"
-format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+format = '[[ $symbol $branch(:$remote_branch) ](fg:#769ff0 bg:#394260)]($style)'
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = ""
+tag_disabled = false
 
 [git_status]
 style = "bg:#394260"
@@ -147,12 +97,6 @@ windows_starship = "/mnt/c/Program Files/starship/bin/starship.exe"
 symbol = " "
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-
-[guix_shell]
-disabled = true
-
-[haskell]
-disabled = true
 
 [hg_branch]
 symbol = " "
@@ -177,15 +121,24 @@ symbol = "喝 "
 symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = "󰎙"
 style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+format = '[ [[$symbol](fg:#15dd00 bg:#212736) ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [os]
+style = "fg:black bg:white"
+format = "[$symbol ]($style)"
 disabled = false
 
+[os.symbols]
+Arch = ""
+Debian = ""
+Linux = ""
+Ubuntu = ""
+Windows = "󰖳"
+
 [package]
-symbol = " "
+symbol = " "
 
 [python]
 symbol = " "
@@ -193,22 +146,77 @@ style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [rust]
-symbol = " "
+symbol = " "
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[shell]
+style = "fg:black bg:white"
+format = "[ $indicator ]($style)"
+disabled = false
 
 [shlvl]
 disabled = false
 
 [status]
-symbol = "🔴 "
+style = "fg:black bg:red"
+symbol = ""
+format = "[ $symbol $common_meaning$signal_name:$status ]($style)"
 disabled = false
 
 [sudo]
+symbol = ""
+style = "fg:red bg:white"
+format = "[$symbol ]($style)"
 disabled = false
 
 [time]
 style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+format = '[[  $time](fg:#a0a9cb bg:#1d2230)]($style)'
 time_format = "%R"
 disabled = false
+
+[zig]
+symbol = ""
+
+# Disabled modules
+
+[aws]
+disabled = true
+
+[buf]
+disabled = true
+
+[cobol]
+disabled = true
+
+[conda]
+disabled = true
+
+[crystal]
+disabled = true
+
+[daml]
+disabled = true
+
+[elixir]
+disabled = true
+
+[elm]
+disabled= true
+
+[erlang]
+disabled = true
+
+[fennel]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[guix_shell]
+disabled = true
+
+[haskell]
+disabled = true
+
