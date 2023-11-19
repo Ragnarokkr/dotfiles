@@ -1,0 +1,31 @@
+export HISTFILE="$HOME/.zhistory"
+export HISTSIZE=10000
+export SAVEHIST=10000
+
+export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+export MANPAGER='sh -c "col -bx | bat -l man -p"'
+export MANROFFOPT="-c"
+
+export LESS='--incsearch --mouse --wheel-lines=3 --use-color --wordwrap'
+
+export BROWSER="$(command -v thorium.exe)"
+
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# NPM
+export NPM_PATH="$XDG_CONFIG_HOME/node_modules"
+export NPM_BIN="$XDG_CONFIG_HOME/node_modules/bin"
+export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/node_modules"
+
+# git
+export GIT_REVIEW_BASE=master # See gitconfig
+export GIT_CONFIG_GLOBAL="$HOME/.config/git/.gitconfig"
+
+export PATH="$HOME/.local/bin":$PATH

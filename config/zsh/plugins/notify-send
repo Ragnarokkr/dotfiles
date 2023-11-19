@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+# Emulates notify-send for Windows notifications
+# It requires the command `wsl-notify-send.exe` installed on Windows
+# and reachable through the $PATH.
+# https://github.com/stuartleeks/wsl-notify-send
+notify-send() {
+    $(command -v wsl-notify-send.exe) --appId $WSL_DISTRO_NAME "$@";
+}

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Install kickstart for NeoVim
+# ⚠️  Remember to install a C/C++ compiler (or build-essential)
+if [ ! -d $HOME/.config/nvim ]; then
+	git clone --depth=1 https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+fi
+

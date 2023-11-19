@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+# Create and CD a directory
+take() {
+    if [[ $# -eq 0 ]]; then
+       echo "ERROR: a directory path is required."
+        return 1
+    fi
+
+    mkdir -p $1 && cd $1
+}

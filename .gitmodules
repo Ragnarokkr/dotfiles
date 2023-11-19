@@ -1,0 +1,6 @@
+[submodule "private"]
+	path = private
+	url = https://github.com/Ragnarokkr/dotfiles-private.git
+[submodule "config/zsh/plugins/zsh-completions"]
+	path = config/zsh/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions

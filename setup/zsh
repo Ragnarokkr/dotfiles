@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+[[ ! -d /etc/pacman.d/hooks ]] && sudo mkdir -p /etc/pacman.d/hooks
+[[ ! -d /var/cache/zsh ]] && sudo mkdir -p /var/cache/zsh
+sudo cp $DOTFILES_HOME/setup/zsh.hook /etc/pacman.d/hooks/

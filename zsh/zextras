@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+
+# Configure base prompt
+autoload -Uz promptinit
+promptinit
+# This will set the default prompt to the walters theme
+prompt walters
+eval "$(starship init zsh)"
+
+# Enable history search
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+# Fish-like syntax highlighting and autosuggestions
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Zoxide configruation
+eval "$(zoxide init zsh)"
+
+# FNM
+eval "$(fnm env)"

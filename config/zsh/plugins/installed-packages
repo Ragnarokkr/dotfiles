@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+
+# Prints the name of the packages installed by the dotfiles installer
+installed-packages() {
+    local packages=$(cat $DOTFILES_HOME/packages.list)
+
+    echo 'Installed packages by .dotfiles installer:'
+    printf '-%.0s' {1..79}
+    printf '\n%-15s %-30s %-30s\n' 'PKG MANAGER' 'PACKAGE' 'PROVIDES'
+    printf '-%.0s' {1..79}
+    echo ''
+
+    for package in $(cat $DOTFILES_HOME/packages.list); do
+        local pkgManager=$(echo $package | cut -d ':' -f 1)
+        local pkgName=$(echo $package | cut -d ':' -f 2)
+        local pkgExec=$(echo $package | cut -d ':' -f 3)
+        printf "%-15s %-30s %-30s\n" "$pkgManager" "$pkgName" "${pkgExec:-$pkgName}"
+    done
+}

@@ -1,0 +1,85 @@
+#!/usr/bin/env zsh
+
+# LSD config file is bugged, so we configure it "old-style"
+alias ls='lsd -AFv --color=auto --group-dirs=first --icon=never'
+alias ll='ls -alg --icon=auto --date="+%Y-%m-%d %H:%M:%S" --git --size=bytes'
+
+# enable color support
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias diff='diff --color=auto'
+
+# configure bat to behave as cat
+alias bat='bat --style=full --color=auto --italic-text=always'
+alias cat='bat --style=plain'
+
+# emulate macOS copy&paste command
+alias pbcopy='/mnt/c/Windows/System32/clip.exe'
+alias pbpaste='"/mnt/c/Program Files/PowerShell/7/pwsh.exe" -command "Get-Clipboard"'
+
+# emulate tmux with zellij
+alias tmux='zellij'
+
+# shortcut for VSCode Insiders
+alias code='code-insiders'
+
+# remove unused Nix packages
+alias nixcg='nix-collect-garbage --delete-old'
+
+# re-source whole shell configuration
+alias refresh='source $HOME/.zshrc'
+
+# pacman shortcuts
+alias paci='sudo pacman -S'               # install
+alias pacs='pacman -Ss'                   # search
+alias pacu='sudo pacman -Syu'             # update
+alias pachi='pacman -Ql'                  # Pacman Has Installed - what files where installed in a package
+alias pacfl='pacman -Fl'                  # Pacman Not Installed - what files where installed in a package
+alias pacrr='sudo pacman -Rs'             # remove package with unused dependencies by other softwares
+alias pacr='sudo pacman -R'               # remove package but not dependencies
+alias pacrc='sudo pacman -Sc'             # remove pacman's cache
+alias pacro='pacman -Rns $(pacman -Qtdq)'
+alias pacrl='rm /var/lib/pacman/db.lck'   # pacman remove locks
+alias pacls="sudo pacman -Qe"
+alias pacc='sudo pacman -Sc'
+alias paccc='sudo pacman -Scc'            # empty the whole cache
+
+# neovim
+alias vim='nvim'
+alias vi='nvim'
+alias svim='sudoedit'
+alias dvim="vim -u /usr/share/nvim/archlinux.vim" # nvim with default config
+alias nvimc='rm -I $VIMCONFIG/swap/*'             # clean nvim swap file
+alias nvimcu='rm -I $VIMCONFIG/undo/*'            # clean the vim undo
+alias nviml='nvim -w $VIMCONFIG/vimlog "$@"'      # log the keystrokes 
+alias nvimd='nvim --noplugin -u NONE'             # launch nvim without any plugin or config (nvim debug)
+alias lvim='\vim -c "set nowrap|syntax off"'        # fast vim for big files / big oneliner
+
+# git
+alias gs='git status'
+alias gss='git status -s'
+alias ga='git add'
+alias gp='git push'
+alias gpraise='git blame'
+alias gpo='git push origin'
+alias gpof='git push origin --force-with-lease'
+alias gpofn='git push origin --force-with-lease --no-verify'
+alias gpt='git push --tag'
+alias gtd='git tag --delete'
+alias gtdr='git tag --delete origin'
+alias grb='git branch -r'                                                                           # display remote branch
+alias gplo='git pull origin'
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias gco='git checkout '
+alias gl='git log --pretty=oneline'
+alias gr='git remote'
+alias grs='git remote show'
+alias glol='git log --graph --abbrev-commit --oneline --decorate'
+alias gclean="git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d" # Delete local branch merged with master
+alias gblog="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:red)%(refname:short)%(color:reset) - %(color:yellow)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:blue)%(committerdate:relative)%(color:reset))'"                                                             # git log for each branches
+alias gsub="git submodule update --remote"                                                        # pull submodules
+alias gj="git-jump"                                                                               # Open in vim quickfix list files of interest (git diff, merged...)
+alias dif="git diff --no-index"    
