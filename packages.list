@@ -20,3 +20,4 @@ pacman:zsh-autosuggestions:/usr/share/zsh/plugins/zsh-autosuggestions
 pacman:zsh-completions:/usr/share/doc/zsh-completions
 pacman:zsh-syntax-highlighting:/usr/share/zsh/plugins/zsh-syntax-highlighting
 nix:fnm
+nix:rmw
