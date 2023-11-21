@@ -40,3 +40,54 @@ To add or remove packages from the installation, edit the `packages.list` file. 
 |7|install **Nix**||install Nix Package Manager
 |8|install packages||install packages defined in `packages.list`
 |9|run scripts in `setup`||run auxiliary setup scripts for the installed packages
+
+## Shell Prompt
+
+Shell prompt is customized for [Starship](https://starship.rs/). It is provided with both a light and dark theme. The prompt is subdivided in three areas: left side for system related infos, center area for package and languages infos, and right area for process, time, and extra infos.
+
+The prompt is built through a single string, and does not use the `right_format` functionalty to provide compatiblity with PowerShell (which does not support it).
+
+### Palette
+
+|Light||||
+|-|-|-|-|
+|`left_fg`|<pre style="background-color:#333333">#333333</pre>|`right_fg`|<pre style="background-color:#333333">#333333</pre>|
+|`left_bg`|<pre style="color:#333;background-color:#dddddd">#dddddd</pre>|`right_bg`|<pre style="color:#333;background-color:#dddddd">#dddddd</pre>|
+|`success`|<pre style="color:#ddd;background-color:#367a02">#367a02</pre>|`alert`|<pre style="color:#ddd;background-color:#7a0202">#7a0202</pre>|
+|`versioning`|<pre style="color:#ddd;background-color:#7a4602">#7a4602</pre>|
+|`lines`|<pre style="color:#333;background-color:#dddddd">#dddddd</pre>|
+
+|Dark||||
+|-|-|-|-|
+|`left_fg`|<pre style="color:#333;background-color:#a0a9cb">#a0a9cb</pre>|`right_fg`|<pre style="color:#333;background-color:#a0a9cb">#a0a9cb</pre>|
+|`left_bg`|<pre style="color:#ddd;background-color:#1d2230">#1d2230</pre>|`right_bg`|<pre style="color:#ddd;background-color:#1d2230">#1d2230</pre>|
+|`success`|<pre style="color:#333;background-color:#9be342">#9be342</pre>|`alert`|<pre style="color:#ddd;background-color:#e34242">#e34242</pre>|
+|`versioning`|<pre style="color:#333;background-color:#e37842">#e37842</pre>|
+|`lines`|<pre style="color:#333;background-color:#a0a9cb">#a0a9cb</pre>|
+
+### Format
+
+|Left|Center|Right|
+|-|-|-|
+|`$os`|`$bun`|`$jobs`|
+|`$sudo`|`$c`|`$cmd_duration`|
+|`$username`|`$dart`|`$time`|
+|`$hostname`|`$deno`||
+|`$container`|`$golang`||
+|`$docker_context`|`$java`||
+|`$shell`|`$lua`||
+|`$shlvl`|`$meson`||
+|`$nix_shell`|`$nodejs`||
+|`$directory`|`$package`||
+|`$git_branch`|`$python`||
+|`$git_commit`|`$rust`||
+|`$git_status`|`$zig`||
+|`$status`|
+
+### Preview
+
+**Light**
+![Screenshot Light Theme](images/screenshot-prompt-light.jpg)
+
+**Dark**
+![Screenshot Dark Theme](images/screenshot-prompt-dark.jpg)
