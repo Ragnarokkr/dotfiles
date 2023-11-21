@@ -68,23 +68,23 @@ The shell prompt is provided with both a light and dark theme. The prompt is sub
 
 #### Light
 
-| Name         |                        Color                        | Name        |                        Color                        | Name       |                        Color                        |
-| ------------ | :-------------------------------------------------: | ----------- | :-------------------------------------------------: | ---------- | :-------------------------------------------------: |
-| `left_fg`    | ${\colorbox{333333}{\textcolor{dddddd}{\#333333}}}$ | `center_fg` | ${\colorbox{333333}{\textcolor{dddddd}{\#333333}}}$ | `right_fg` | ${\colorbox{333333}{\textcolor{dddddd}{\#333333}}}$ |
-| `left_bg`    | ${\colorbox{dddddd}{\textcolor{333333}{\#dddddd}}}$ | `center_bg` | ${\colorbox{dddddd}{\textcolor{333333}{\#dddddd}}}$ | `right_bg` | ${\colorbox{dddddd}{\textcolor{333333}{\#dddddd}}}$ |
-| `success`    | ${\colorbox{367a02}{\textcolor{dddddd}{\#367a02}}}$ | `alert`     | ${\colorbox{7a0202}{\textcolor{dddddd}{\#7a0202}}}$ |
-| `versioning` | ${\colorbox{7a4602}{\textcolor{dddddd}{\#7a4602}}}$ |
-| `lines`      | ${\colorbox{dddddd}{\textcolor{333333}{\#dddddd}}}$ |
+| Name         |                       Color                        | Name        |                       Color                        | Name       |                       Color                        |
+| ------------ | :------------------------------------------------: | ----------- | :------------------------------------------------: | ---------- | :------------------------------------------------: |
+| `left_fg`    | ![](https://img.shields.io/badge/%23333333-333333) | `center_fg` | ![](https://img.shields.io/badge/%23333333-333333) | `right_fg` | ![](https://img.shields.io/badge/%23333333-333333) |
+| `left_bg`    | ![](https://img.shields.io/badge/%23dddddd-dddddd) | `center_bg` | ![](https://img.shields.io/badge/%23dddddd-dddddd) | `right_bg` | ![](https://img.shields.io/badge/%23dddddd-dddddd) |
+| `success`    | ![](https://img.shields.io/badge/%23367a02-367a02) | `alert`     | ![](https://img.shields.io/badge/%237a0202-7a0202) |
+| `versioning` | ![](https://img.shields.io/badge/%237a4602-7a4602) |
+| `lines`      | ![](https://img.shields.io/badge/%23dddddd-dddddd) |
 
 #### Dark
 
-| Name         |                        Color                        | Name        |                        Color                        | Name       |                        Color                        |
-| ------------ | :-------------------------------------------------: | ----------- | :-------------------------------------------------: | ---------- | :-------------------------------------------------: |
-| `left_fg`    | ${\colorbox{a0a9cb}{\textcolor{333333}{\#a0a9cb}}}$ | `center_fg` | ${\colorbox{a0a9cb}{\textcolor{333333}{\#a0a9cb}}}$ | `right_fg` | ${\colorbox{a0a9cb}{\textcolor{333333}{\#a0a9cb}}}$ |
-| `left_bg`    | ${\colorbox{1d2230}{\textcolor{dddddd}{\#1d2230}}}$ | `center_bg` | ${\colorbox{1d2230}{\textcolor{dddddd}{\#1d2230}}}$ | `right_bg` | ${\colorbox{1d2230}{\textcolor{dddddd}{\#1d2230}}}$ |
-| `success`    | ${\colorbox{9be342}{\textcolor{333333}{\#9be342}}}$ | `alert`     | ${\colorbox{e34242}{\textcolor{dddddd}{\#e34242}}}$ |
-| `versioning` | ${\colorbox{e37842}{\textcolor{333333}{\#e37842}}}$ |
-| `lines`      | ${\colorbox{a0a9cb}{\textcolor{333333}{\#a0a9cb}}}$ |
+| Name         |                       Color                        | Name        |                       Color                        | Name       |                       Color                        |
+| ------------ | :------------------------------------------------: | ----------- | :------------------------------------------------: | ---------- | :------------------------------------------------: |
+| `left_fg`    | ![](https://img.shields.io/badge/%23a0a9cb-a0a9cb) | `center_fg` | ![](https://img.shields.io/badge/%23a0a9cb-a0a9cb) | `right_fg` | ![](https://img.shields.io/badge/%23a0a9cb-a0a9cb) |
+| `left_bg`    | ![](https://img.shields.io/badge/%231d2230-1d2230) | `center_bg` | ![](https://img.shields.io/badge/%231d2230-1d2230) | `right_bg` | ![](https://img.shields.io/badge/%231d2230-1d2230) |
+| `success`    | ![](https://img.shields.io/badge/%239be342-9be342) | `alert`     | ![](https://img.shields.io/badge/%23e34242-e34242) |
+| `versioning` | ![](https://img.shields.io/badge/%23e37842-e37842) |
+| `lines`      | ![](https://img.shields.io/badge/%23a0a9cb-a0a9cb) |
 
 ### Format
 
