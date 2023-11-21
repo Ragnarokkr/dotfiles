@@ -19,7 +19,7 @@ $status\
 [](fg:left_bg)\
 $fill\
 ([](right_bg)\
-$all\
+${custom.dotenv}$all\
 [](fg:left_bg))\
 $fill\
 [](right_bg)\
@@ -32,11 +32,14 @@ $line_break\
 """
 
 continuation_prompt = '[󰈑](fg:lines) '
+command_timeout = 3000
 palette = "dark"
 
 [palettes.light]
 left_fg = "#333333"
 left_bg = "#dddddd"
+center_fg = "#333333"
+center_bg = "#dddddd"
 right_fg = "#333333"
 right_bg = "#dddddd"
 success = "#367a02"
@@ -47,6 +50,8 @@ lines = "#dddddd"
 [palettes.dark]
 left_fg = "#a0a9cb"
 left_bg = "#1d2230"
+center_fg = "#a0a9cb"
+center_bg = "#1d2230"
 right_fg = "#a0a9cb"
 right_bg = "#1d2230"
 success = "#9be342"
@@ -165,63 +170,72 @@ format = "[$user]($style)"
 
 [bun]
 symbol = ""
-style = "fg:right_fg bg:right_bg"
-format = "[ $symbol([ $version ](fg:versioning bg:right_bg))]($style)"
+style = "fg:center_fg bg:center_bg"
+format = "[ $symbol([ $version ](fg:versioning bg:center_bg))]($style)"
 
 [c]
 symbol = ""
-style = "fg:right_fg bg:right_bg"
-format = "[ $symbol([ $version ](fg:versioning bg:right_bg))]($style)"
+style = "fg:center_fg bg:center_bg"
+format = "[ $symbol([ $version ](fg:versioning bg:center_bg))]($style)"
 
 [dart]
 symbol = ""
-style = "fg:right_fg bg:right_bg"
-format = "[ $symbol([ $version ](fg:versioning bg:right_bg))]($style)"
+style = "fg:center_fg bg:center_bg"
+format = "[ $symbol([ $version ](fg:versioning bg:center_bg))]($style)"
 
 [deno]
 symbol = "🦖"
-style = "fg:right_fg bg:right_bg"
-format = "[ $symbol([ $version ](fg:versioning bg:right_bg))]($style)"
+style = "fg:center_fg bg:center_bg"
+format = "[ $symbol([ $version ](fg:versioning bg:center_bg))]($style)"
 
 [golang]
 symbol = ""
-style = "fg:right_fg bg:right_bg"
-format = "[ $symbol([ $version ](fg:versioning bg:right_bg))]($style)"
+style = "fg:center_fg bg:center_bg"
+format = "[ $symbol([ $version ](fg:versioning bg:center_bg))]($style)"
 
 [java]
 symbol = ""
-style = "fg:right_fg bg:right_bg"
-format = "[ $symbol([ $version ](fg:versioning bg:right_bg))]($style)"
+style = "fg:center_fg bg:center_bg"
+format = "[ $symbol([ $version ](fg:versioning bg:center_bg))]($style)"
 
 [lua]
 symbol = ""
-style = "fg:right_fg bg:right_bg"
-format = "[ $symbol([ $version ](fg:versioning bg:right_bg))]($style)"
+style = "fg:center_fg bg:center_bg"
+format = "[ $symbol([ $version ](fg:versioning bg:center_bg))]($style)"
 
 [nodejs]
 symbol = "󰎙"
-style = "fg:right_fg bg:right_bg"
-format = "[ $symbol([ $version ](fg:versioning bg:right_bg))]($style)"
+style = "fg:center_fg bg:center_bg"
+format = "[ $symbol([ $version ](fg:versioning bg:center_bg))]($style)"
 
 [package]
-style = "fg:right_fg bg:right_bg"
+style = "fg:center_fg bg:center_bg"
 symbol = ""
-format = "[ $symbol([ $version ](fg:versioning bg:right_bg))]($style)"
+format = "[ $symbol([ $version ](fg:versioning bg:center_bg))]($style)"
 
 [python]
 symbol = ""
-style = "fg:right_fg bg:right_bg"
-format = "[ $symbol([ $version ](fg:versioning bg:right_bg))]($style)"
+style = "fg:center_fg bg:center_bg"
+format = "[ $symbol([ $version ](fg:versioning bg:center_bg))]($style)"
 
 [rust]
 symbol = ""
-style = "fg:right_fg bg:right_bg"
-format = "[ $symbol([ $version ](fg:versioning bg:right_bg))]($style)"
+style = "fg:center_fg bg:center_bg"
+format = "[ $symbol([ $version ](fg:versioning bg:center_bg))]($style)"
 
 [zig]
-style = "fg:right_fg bg:right_bg"
+style = "fg:center_fg bg:center_bg"
 symbol = ""
-format = "[ $symbol([ $version ](fg:versioning bg:right_bg))]($style)"
+format = "[ $symbol([ $version ](fg:versioning bg:center_bg))]($style)"
+
+[custom.dotenv]
+description = 'The number of values defined into a .env file'
+command = "Get-Content .env | Measure-Object -Line | Select-Object -ExpandProperty Lines"
+when = 'Test-Path .env'
+shell = ['pwsh.exe', '-NoProfile', '-Command', '-']
+style = "fg:center_fg bg:center_bg"
+symbol = "󰈉"
+format = "[( $symbol $output )]($style)"
 
 #
 # RIGHT SIDE
