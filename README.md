@@ -68,22 +68,23 @@ The shell prompt is provided with both a light and dark theme. The prompt is sub
 
 #### Light
 
-| Name         | Color     | Name        | Color     | Name       | Color     |
-| ------------ | --------- | ----------- | --------- | ---------- | --------- |
-| `left_fg`    | `#333333` | `center_fg` | `#333333` | `right_fg` | `#333333` | `center_bg` | `#dddddd` | `right_bg` | `#dddddd` |
-| `success`    | `#367a02` | `alert`     | `#7a0202` |
-| `versioning` | `#7a4602` |
-| `lines`      | `#dddddd` |
+| Name         |                        Color                        | Name        |                        Color                        | Name       |                        Color                        |
+| ------------ | :-------------------------------------------------: | ----------- | :-------------------------------------------------: | ---------- | :-------------------------------------------------: |
+| `left_fg`    | ${\colorbox{333333}{\textcolor{dddddd}{\#333333}}}$ | `center_fg` | ${\colorbox{333333}{\textcolor{dddddd}{\#333333}}}$ | `right_fg` | ${\colorbox{333333}{\textcolor{dddddd}{\#333333}}}$ |
+| `left_bg`    | ${\colorbox{dddddd}{\textcolor{333333}{\#dddddd}}}$ | `center_bg` | ${\colorbox{dddddd}{\textcolor{333333}{\#dddddd}}}$ | `right_bg` | ${\colorbox{dddddd}{\textcolor{333333}{\#dddddd}}}$ |
+| `success`    | ${\colorbox{367a02}{\textcolor{dddddd}{\#367a02}}}$ | `alert`     | ${\colorbox{7a0202}{\textcolor{dddddd}{\#7a0202}}}$ |
+| `versioning` | ${\colorbox{7a4602}{\textcolor{dddddd}{\#7a4602}}}$ |
+| `lines`      | ${\colorbox{dddddd}{\textcolor{333333}{\#dddddd}}}$ |
 
 #### Dark
 
-| Name         | Color     | Name        | Color     | Name       | Color     |
-| ------------ | --------- | ----------- | --------- | ---------- | --------- |
-| `left_fg`    | `#a0a9cb` | `center_fg` | `#a0a9cb` | `right_fg` | `#a0a9cb` |
-| `left_bg`    | `#1d2230` | `center_bg` | `#1d2230` | `right_bg` | `#1d2230` |
-| `success`    | `#9be342` | `alert`     | `#e34242` |
-| `versioning` | `#e37842` |
-| `lines`      | `#a0a9cb` |
+| Name         |                        Color                        | Name        |                        Color                        | Name       |                        Color                        |
+| ------------ | :-------------------------------------------------: | ----------- | :-------------------------------------------------: | ---------- | :-------------------------------------------------: |
+| `left_fg`    | ${\colorbox{a0a9cb}{\textcolor{333333}{\#a0a9cb}}}$ | `center_fg` | ${\colorbox{a0a9cb}{\textcolor{333333}{\#a0a9cb}}}$ | `right_fg` | ${\colorbox{a0a9cb}{\textcolor{333333}{\#a0a9cb}}}$ |
+| `left_bg`    | ${\colorbox{1d2230}{\textcolor{dddddd}{\#1d2230}}}$ | `center_bg` | ${\colorbox{1d2230}{\textcolor{dddddd}{\#1d2230}}}$ | `right_bg` | ${\colorbox{1d2230}{\textcolor{dddddd}{\#1d2230}}}$ |
+| `success`    | ${\colorbox{9be342}{\textcolor{333333}{\#9be342}}}$ | `alert`     | ${\colorbox{e34242}{\textcolor{dddddd}{\#e34242}}}$ |
+| `versioning` | ${\colorbox{e37842}{\textcolor{333333}{\#e37842}}}$ |
+| `lines`      | ${\colorbox{a0a9cb}{\textcolor{333333}{\#a0a9cb}}}$ |
 
 ### Format
 
