@@ -1,4 +1,5 @@
 pacman:bat
+pacman:curlftpfs
 pacman:deno
 pacman:diff-so-fancy
 pacman:dust
