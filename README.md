@@ -8,6 +8,7 @@ My personal dotfiles: a Perennial Work in Progress. Will it ever find an end? ðŸ
 - [ArchLinux][archlinux]
 - Zsh
 - [Starship][starship]
+- [Nerd Fonts][nerdfonts] (I'm using **JetBrainsMono Nerd Font**, but any Nerd Font should work just as well.)
 
 ## Install
 
@@ -108,3 +109,4 @@ The shell prompt is provided with both a light and dark theme. The prompt is sub
 [wsl]: https://learn.microsoft.com/en-us/windows/wsl/install-manual
 [archlinux]: https://geo.mirror.pkgbuild.com/iso/latest/
 [starship]: https://starship.rs/
+[nerdfonts]: https://www.nerdfonts.com/
