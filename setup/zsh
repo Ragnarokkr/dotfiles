@@ -4,4 +4,4 @@
 [[ ! -d /var/cache/zsh ]] && sudo mkdir -p /var/cache/zsh
 sudo cp $DOTFILES_HOME/setup/zsh.hook /etc/pacman.d/hooks/
 
-curl -L https://github.com/nordtheme/dircolors/raw/develop/src/dir_colors -o ~/.dircolors
+curl -L https://github.com/nordtheme/dircolors/raw/develop/src/dir_colors -o $HOME/.dircolors
