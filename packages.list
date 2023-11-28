@@ -11,7 +11,7 @@ pacman:man-db:man
 pacman:neofetch
 pacman:neovim:nvim
 pacman:openssh:ssh
-pacman:p7zip
+pacman:p7zip:7z
 pacman:parallel
 pacman:pigz
 pacman:starship
