@@ -27,7 +27,7 @@ check_packages() {
 		echo -e "\tpackager:package"
 		echo -e "\tpackager:package:command"
 		echo -e "\tpackager:package:dir_path\n"
-		exit 1
+		return 1
 	fi
 }
 
@@ -38,6 +38,8 @@ install_dotfiles() {
 		[[ -f $dotfile ]] \
 			&& ln -sfv $dotfile $HOME/.$(basename $dotfile)
 	done
+
+	return 0
 }
 
 install_config() {
@@ -55,6 +57,8 @@ install_config() {
 	# sensitive data aren't published in repo.
 	[[ ! -e $HOME/.config/git ]] \
 		&& cp -rv $DOTFILES_HOME/config/git $HOME/.config
+
+	return 0
 }
 
 install_private() {
@@ -65,6 +69,8 @@ install_private() {
 			&& [[ ! -e $HOME/.config/$(basename $config) ]] \
 			&& ln -sfv $config $HOME/.config/$(basename $config)
 	done
+
+	return 0
 }
 
 install_commands() {
@@ -73,6 +79,8 @@ install_commands() {
 	[[ -d $DOTFILES_HOME/local/bin ]] \
 		&& [[ ! -e $HOME/.local/bin ]] \
 		&& ln -sfv $DOTFILES_HOME/local/bin $HOME/.local/bin
+
+	return 0
 }
 
 install_nix() {
@@ -82,6 +90,8 @@ install_nix() {
 		&& sh <(curl -L https://nixos.org/nix/install) --daemon \
 		&& nix-channel --add https://nixos.org/channels/nixpkgs-unstable \
 		&& nix-channel --update
+
+	return 0
 }
 
 install_system_commands() {
@@ -119,14 +129,18 @@ install_system_commands() {
 			$pkgInstall
 		fi
 	done
+
+	return 0
 }
 
 aux_setup() {
 	echo "Running auxiliary setups"
 
 	for setup in $DOTFILES_HOME/setup/**; do
-		[[ -x $setup ]] && exec $setup
+		[[ -x $setup ]] && "$setup"
 	done
+
+	return 0
 }
 
 
