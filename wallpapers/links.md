@@ -45,3 +45,8 @@
 - ![wallpaper-015.jpg](wallpaper-015.jpg)
 [wallpaper-015.jpg](https://images.wallpaperscraft.com/image/single/landscape_blue_tree_92069_1920x1080.jpg)
 
+- ![wallpaper-016.jpg](wallpaper-016.jpg)
+[wallpaper-016.jpg](https://wallpaperaccess.com/download/manga-desktop-41078)
+
+- ![wallpaper-017.jpg](wallpaper-017.jpg)
+[wallpaper-017.jpg](https://wall.alphacoders.com/big.php?i=1351260)
