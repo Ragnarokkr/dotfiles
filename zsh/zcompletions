@@ -84,6 +84,12 @@ zshcache_time="$(date +%s%N)"
 # FNM
 fnm completions --shell=zsh >$XDG_CONFIG_HOME/zsh/plugins/_fnm
 
+# CARAPACE
+#export CARAPACE_BRIDGES='zsh,bash' # optional
+#zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+#zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
+#source <(carapace _carapace)
+
 autoload -Uz add-zsh-hook
 
 rehash_precmd() {
