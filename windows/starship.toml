@@ -236,6 +236,7 @@ shell = ['pwsh.exe', '-NoProfile', '-Command', '-']
 style = "fg:center_fg bg:center_bg"
 symbol = "󰈉"
 format = "[( $symbol $output )]($style)"
+ignore_timeout = true
 
 #
 # RIGHT SIDE
