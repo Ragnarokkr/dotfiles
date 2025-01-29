@@ -28,13 +28,6 @@ setopt HIST_VERIFY               # Do not execute immediately upon history expan
 # make less more friendly for non-text input files, see lesspipe(1)
 [[ -x /usr/bin/lesspipe ]] && export LESSOPEN="|lesspipe %s"
 
-# Enable color support
-if [[ -x /usr/bin/dircolors ]]; then
-  [[ -r $HOME/.dircolors ]] \
-    && eval "$(dircolors -b $HOME/.dircolors)" \
-    || eval "$(dircolors -b)"
-fi
-
 # Sources .dotfiles
 for dotfile in $HOME/.{zcompletions,zaliases,zextras,zkeybindings,zlogin,dotfilesrc}; do
   [[ -f $dotfile ]] && source $dotfile
@@ -47,3 +40,8 @@ autoload -Uz $fpath[1]/*(.:t)
 autoload -Uz compinit
 compinit
 _comp_options+=(globdots) # With hidden files
+
+# carapace
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
+source <(carapace _carapace)

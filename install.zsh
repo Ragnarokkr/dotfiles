@@ -83,17 +83,6 @@ install_commands() {
 	return 0
 }
 
-install_nix() {
-	echo "Installing Nix Package Manager"
-
-	[[ -z $(command -v nix) ]] \
-		&& sh <(curl -L https://nixos.org/nix/install) --daemon \
-		&& nix-channel --add https://nixos.org/channels/nixpkgs-unstable \
-		&& nix-channel --update
-
-	return 0
-}
-
 install_system_commands() {
 	echo "Installing packages"
 
@@ -110,9 +99,9 @@ install_system_commands() {
 					local pkgInstall=""
 				fi
 				;;
-			nix)
-				if [[ -n $(command -v nix-env) ]]; then 
-					local pkgInstall="nix-env -iA nixpkgs.$pkgName"
+			paru)
+				if [[ -n $(command -v paru) ]]; then
+					local pkgInstall="paru -S $pkgName"
 				else
 					local pkgInstall=""
 				fi
@@ -157,7 +146,6 @@ install_dotfiles
 install_config
 install_private
 install_commands
-install_nix
 install_system_commands
 
 aux_setup
